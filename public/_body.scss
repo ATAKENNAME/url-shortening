@@ -1,0 +1,11 @@
+$text-color:hsl(0, 0%, 75%);
+
+
+body {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.text {
+    color: $text-color;
+}
