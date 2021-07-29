@@ -1,0 +1,150 @@
+$transition-bar-color:hsl(180, 66%, 49%);
+
+@mixin transition-bar-style-vertical {
+    background-color: $transition-bar-color;
+    width: 0.5rem;
+    height: 5rem;
+
+}
+
+@mixin transition-bar-style-horizontal {
+    background-color: $transition-bar-color;
+    width: 5rem;
+    height: 0.5rem;
+}
+
+@mixin stat-box-style {
+    padding-top: 130px;
+    height: auto;
+    background-color: hsla(259, 28%, 68%, 0.2);
+}
+
+
+#stat-box {
+    @include stat-box-style();
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    h2 {
+        height: fit-content;
+    }
+
+    p {
+        display: block;
+    }
+}
+
+#cardCollection {
+    position: static;
+
+
+    .stat-card {
+        // position: relative;
+        margin: 20% auto;
+        width: 18rem;
+        height: 17rem;
+    }
+
+    .transition-bar {
+        @include transition-bar-style-vertical();
+        position: absolute;
+        top: -80px;
+        left: 140px;
+        z-index: -1;
+
+    }
+
+    .stat-card-icon-container {
+        position: absolute;
+        top: -2.5rem;
+        left: 105px;
+        width: 5rem;
+        height: 5rem;
+        background-color: hsl(257, 27%, 26%);
+        border-radius: 100%;
+    }
+
+    .stat-card-icon {
+        margin: 20% auto;
+    }
+}
+
+
+
+
+.card-title {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 992px) {
+
+
+    #stat-box {
+
+
+        #stat-text-box {
+            margin: 0;
+            text-align: center;
+
+            p {
+                margin: 0 auto;
+                width: 60%;
+            }
+        }
+
+        #cardCollection {
+            display: flex;
+            flex-direction: row;
+            padding-bottom: 130px;
+
+
+            .stat-card {
+                margin: 90px 30px;
+                width: 18rem;
+                height: 17rem;
+            }
+
+
+        }
+
+
+
+
+
+        .transition-bar {
+            @include transition-bar-style-horizontal();
+            position: absolute;
+            top: 75px;
+            left: -70px;
+            z-index: -1;
+
+        }
+
+        .stat-card-icon-container {
+            position: absolute;
+            top: -2.5rem;
+            left: 105px;
+            width: 5rem;
+            height: 5rem;
+            background-color: hsl(257, 27%, 26%);
+            border-radius: 100%;
+        }
+
+        .stat-card-icon {
+            margin: 20% auto;
+        }
+    }
+
+    .transition-bar {
+        @include transition-bar-style-horizontal();
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: -1;
+
+    }
+
+}

@@ -1,0 +1,101 @@
+@mixin intro-btn-style {
+    width: 150px;
+    height:40px;
+    color:white;
+    background-color: $btn-color;
+    border-radius: 25px;
+    border: none;
+    font-size: 18px;
+
+    &:hover{
+        color: hsl(257, 27%, 26%);
+    }
+}
+
+
+#intro-box {
+    overflow: hidden !important;
+}
+
+#intro-bg-img {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    margin-left: 60px;
+    width: 120%;
+}
+#intro-text-box{
+    margin-bottom: 20px;
+}
+
+.intro-btn {
+    @include intro-btn-style();
+}
+
+.imgDisplay-mobile {
+    display: none;
+}
+
+@media screen and (max-width:1066px) and (min-width:992px){
+        #intro-bg-img {
+        position: relative;
+        left: 80px;
+        float:right;
+        width: 50%;
+        margin-left: 40px;
+    }
+
+    #intro-text-box {
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        margin-left: 6rem;
+        margin-bottom: 40px;
+        text-align: left;
+
+        h1#intro-title {
+            font-size: 4rem;
+            font-weight: 600;
+        }
+
+    }
+    .intro-btn {
+        margin-top: 15px;
+        margin-bottom: 30px;
+        @include intro-btn-style();
+    }
+}
+    
+
+@media screen and (min-width: 1067px) {
+
+    #intro-bg-img {
+        position: relative;
+        left: 80px;
+        float:right;
+        width: 50%;
+    }
+
+    .imageDisplay{
+        display: block;
+    }
+
+    #intro-text-box {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        margin-left: 6rem;
+        margin-bottom: 40px;
+        text-align: left;
+
+        h1#intro-title {
+            font-size: 4rem;
+            font-weight: 600;
+        }
+
+    }
+    .intro-btn {
+        margin-top: 15px;
+        @include intro-btn-style();
+    }
+}

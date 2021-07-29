@@ -1,0 +1,195 @@
+$blg-img-funcbox:url("images/bg-shorten-mobile.svg");
+$blg-img-funcbox-responsive: url("images/bg-boost-desktop.svg");
+$card-res-text-color:hsl(180, 66%, 49%);
+
+@mixin cardInput-btn-style {
+    display: block;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+}
+
+@mixin shorten-func-box-style {
+    border: 1px solid transparent;
+    border-radius: 15px;
+    background-repeat: no-repeat;
+    background-color: hsl(257, 27%, 26%)
+}
+
+@mixin card-container-style {
+    border: 0.5px solid hsl(0, 0%, 75%);
+    border-radius: 15px;
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* just make scrollbar invisible */
+}
+
+
+/////screen size for phone + ipad////////
+
+#shorten-link-box {
+    position: relative;
+    width: 90%;
+    top: 60px;
+    left: 5%;
+    padding-bottom: 80px;
+}
+
+#shorten-func-box {
+    @include shorten-func-box-style();
+    background-image: $blg-img-funcbox;
+    background-position: right;
+}
+
+.card-container {
+    @include card-container-style();
+    overflow: hidden;
+    font-weight: 100;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.result-card-text {
+    text-align: left;
+    padding-left: 30px;
+}
+
+.card-input {
+    width: 90%;
+    padding-top: 20px;
+    overflow: auto !important;
+    white-space: nowrap;
+    text-align: left !important;
+}
+
+.card-res {
+    color: $card-res-text-color;
+}
+
+#link-input {
+    margin: 5% auto 5%;
+    width: 80%;
+    @include cardInput-btn-style();
+}
+
+#link-input::placeholder {
+    color: hsl(0, 0%, 75%);
+    padding-left: 5px;
+    font-size: 12px;
+    font-weight: 100;
+    opacity: 1;
+}
+
+.shorten-btn {
+    @include cardInput-btn-style();
+    margin: 5% auto 5%;
+    width: 80%;
+    background-color: $btn-color;
+    color: white;
+    font-weight: 100;
+
+    &:hover{
+    color:hsl(257, 27%, 26%);
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    #shorten-link-box {
+        margin-left: 75px;
+        width: 90%;
+        left: 0;
+        right: 0;
+        top: 0;
+    }
+
+    #shorten-func-box {
+        @include shorten-func-box-style();
+        margin: 0.5rem 0;
+        background-image: $blg-img-funcbox-responsive;
+
+        .shorten-btn,
+        #link-input {
+            display: inline;
+        }
+
+        #link-input {
+            margin-right: 0.5%;
+        }
+
+        .shorten-btn {
+            width: 15%;
+            margin-left: 0.5%;
+        }
+
+
+    }
+
+    #result-cards-container {
+        
+        .result-card {
+            width: 100%;
+            display: flex;
+            height: 60px;
+            justify-content: space-between;
+
+            .card-elemt-container {
+                overflow: hidden;
+                width: 100%;
+                position: relative;
+            }
+
+            hr {
+                display: none;
+            }
+
+
+            p.result-card-text,
+            button.shorten-btn {
+                display: inline;
+                padding: 0;
+                
+            }
+
+            button.shorten-btn {
+                width: 30%;
+                margin-top:10px;
+                margin-left:120px;
+            }
+
+            .result-card-text {
+                position: absolute;
+                top: 20px;
+                left: 0px;
+            }
+
+            .card-elemt-container .card-input {
+                margin-left:8%;
+                width: 100%;
+                overflow: auto !important;
+                white-space: nowrap;
+                text-align: left !important;
+                position:absolute;
+            }
+
+            .card-res {
+                margin-left: 50px;
+                text-align: center !important;
+            }
+            // .copy-btn{
+
+            // }
+
+
+        }
+
+
+    }
+}
